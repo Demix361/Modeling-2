@@ -1,6 +1,5 @@
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import QTableWidgetItem
-import scipy.stats as stats
 import random
 import math
 from itertools import islice
@@ -58,6 +57,7 @@ def on_fill_alg_click(win):
 	one_digit = [random.randint(0, 9) for i in range(1000)]
 	two_digits = [random.randint(10, 99) for i in range(1000)]
 	three_digits = [random.randint(100, 999) for i in range(1000)]
+
 	for i in range(10):
 		item = QTableWidgetItem(str(one_digit[i]))
 		table.setItem(i, 0, item)
@@ -71,6 +71,7 @@ def on_fill_alg_click(win):
 		table.setItem(i, 2, item)
 
 	# table.resizeColumnsToContents()
+
 	entropy_one = calculate_entropy(one_digit)
 	entropy_two = calculate_entropy(two_digits)
 	entropy_three = calculate_entropy(three_digits)
